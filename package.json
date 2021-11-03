@@ -1,0 +1,27 @@
+{
+  "name": "pr",
+  "version": "1.0.0",
+  "description": "good",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/K-Grapefruit/pr.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/K-Grapefruit/pr/issues"
+  },
+  "homepage": "https://github.com/K-Grapefruit/pr#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "nodemon": "^2.0.14"
+  }
+}
