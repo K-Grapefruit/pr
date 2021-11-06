@@ -1,19 +1,22 @@
 import express from "express";
+import morgan from "morgan";
+import userRouter from "./router/userRouter";
+import videoRouter from "./router/videoRouter";
+import rootRouter from "./router/rootRouter";
+
+const app = express();
 const PORT = 4000;
+const logger = morgan("dev");
 
 //express application 생성
-const app = express();
 
-app.get("/", (req, res) => {
-  //요청을 끝내고 싶다
-  //return res.end();
-  //메세지 보내기
-  res.send("무야호~");
-});
+app.set("view engine", "pug");
+//process.cwd() = 현재 프로젝트 경로
+app.set("views", process.cwd() + "/src/views");
+app.use(logger);
+app.use("/", rootRouter);
+app.use("/user", userRouter);
+app.use("/video", videoRouter);
 
-app.get("/login", (req, res) => {
-  return res.send("<h1>Login Page<h1>");
-});
-
-//요청이 들어왔을때 그 요청을 listen
+//요청이 들어왔을때 그 요청을 listen , 서버를 염
 app.listen(PORT, () => console.log("Welcome to Server http://localhost:4000/"));
