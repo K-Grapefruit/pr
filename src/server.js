@@ -10,6 +10,7 @@ const logger = morgan("dev");
 
 //express application 생성
 
+//view엔진을 pug로 설정
 app.set("view engine", "pug");
 //process.cwd() = 현재 프로젝트 경로
 app.set("views", process.cwd() + "/src/views");
