@@ -1,6 +1,7 @@
 mixin board1(info)
     div 
-        h2=info.Title 
+        h4 
+            a(href=`/video/${info.id}`)=info.Title
         li=info.id 
         li=info.username 
         li=info.views
